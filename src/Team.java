@@ -40,7 +40,7 @@ public class Team {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Team's HP: ").append(getTeamHp()).append('\n');
+        sb.append("Team's HP: ").append(getTeamHp()).append("\n\n");
 
         for (int i = 0; i < heroesList.length; i++) {
             sb.append("Hero ").append(i + 1).append('\n');
