@@ -24,15 +24,15 @@ public class Team {
     }
 
     // Reset the team hp
-    public void resetTeamHp(){
+    public void resetTeamHp() {
         teamHp = calculateTeamHp();
     }
 
     // Return total hp of a hero list
-    private double calculateTeamHp(){
+    private double calculateTeamHp() {
         double totalHp = 0;
-        for(int i : heroesList){
-            totalHp+=deck[i].getHp();
+        for (int i : heroesList) {
+            totalHp += deck[i].getHp();
         }
         return totalHp;
     }
@@ -55,15 +55,15 @@ public class Team {
     }
 
     // Return hero from deck
-    public Hero getHero(int index){
+    public Hero getHero(int index) {
         return deck[index];
     }
 
     // Fisher–Yates shuffle
-    private void shuffle(Hero[] deck){
+    private void shuffle(Hero[] deck) {
         Random rand = new Random();
-        for (int i = deck.length-1; i > 0 ; i--) {
-            int j = rand.nextInt(i+1);
+        for (int i = deck.length - 1; i > 0; i--) {
+            int j = rand.nextInt(i + 1);
 
             // swap
             Hero temp = deck[i];

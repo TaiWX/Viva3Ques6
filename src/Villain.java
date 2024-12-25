@@ -1,4 +1,4 @@
-public class Villain extends NPC{
+public class Villain extends NPC {
     double maxHp;
     double defense;
     int initialCd;
@@ -13,22 +13,22 @@ public class Villain extends NPC{
     }
 
     // TODO
-    public void getDamaged(double damage){
+    public void getDamaged(double damage) {
         super.setHp(super.getHp() - damage);
-        if (super.getHp()<0)
+        if (super.getHp() < 0)
             super.setHp(0);
     }
 
-    public void resetHp(){
+    public void resetHp() {
         super.setHp(maxHp);
     }
 
     // Decrease currentCd by one
-    public void decreaseCd(){
+    public void decreaseCd() {
         currentCd--;
     }
 
-    public void resetCd(){
+    public void resetCd() {
         setCurrentCd(getInitialCd());
     }
 

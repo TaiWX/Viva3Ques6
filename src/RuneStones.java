@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class RuneStones{
+public class RuneStones {
     static String[] runeStonesList = {"Water", "Fire", "Earth", "Light", "Dark"};
     static double[][] weakness = {
             {1, 1.5, 0.5, 1, 1},

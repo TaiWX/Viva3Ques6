@@ -1,4 +1,4 @@
-public class Hero extends NPC{
+public class Hero extends NPC {
     public Hero(String name, String element, double hp, double attack) {
         super(name, element, hp, attack);
     }
@@ -12,7 +12,7 @@ public class Hero extends NPC{
     }
 
     // Return damage
-    public double calculateDamage(Villain enemy, int rsMultiplier){
+    public double calculateDamage(Villain enemy, int rsMultiplier) {
         return getAttack() * RuneStones.getWeakness(getElement(), enemy.getElement()) * rsMultiplier - enemy.getDefense();
     }
 
