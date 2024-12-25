@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Team {
     Hero[] deck;
     int[] heroesList;
@@ -5,11 +7,20 @@ public class Team {
 
     public Team(Hero[] deck) {
         this.deck = deck;
-        teamHp = 0; // todo
     }
 
-    private void formTeam(){
+    public void formTeam() {
+        shuffle(deck); // Randomize the deck
 
+        int len = Math.min(deck.length, 4);
+
+        heroesList = new int[len]; // initialize
+
+        for (int i = 0; i < len; i++) {
+            heroesList[i] = i; // grab the first four value from deck
+        }
+
+        teamHp = calculateTeamHp();
     }
 
     // Reset the team hp
@@ -46,5 +57,18 @@ public class Team {
     // Return hero from deck
     public Hero getHero(int index){
         return deck[index];
+    }
+
+    // Fisher–Yates shuffle
+    private void shuffle(Hero[] deck){
+        Random rand = new Random();
+        for (int i = deck.length-1; i > 0 ; i--) {
+            int j = rand.nextInt(i+1);
+
+            // swap
+            Hero temp = deck[i];
+            deck[i] = deck[j];
+            deck[j] = temp;
+        }
     }
 }

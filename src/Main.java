@@ -28,7 +28,7 @@ public class Main {
         Team team = new Team(heroes);
         Game game = new Game();
 
-        //TODO: team.formTeam();
+        team.formTeam();
         System.out.println(team);
 
         game.battle(team, giemsa);
