@@ -10,14 +10,15 @@ public class Game {
         this.team = team;
         this.enemy = enemy;
 
-        do {
+        for (int i = 1; team.getTeamHp() > 0 && enemy.getHp() > 0; i++) {
+            System.out.println("Round " + i);
             process();
-        } while (team.getTeamHp() > 0 && enemy.getHp() > 0);
+        }
 
         if (team.getTeamHp() == 0)
             System.out.println("The team lose.");
         else
-            System.out.println("The team won!");
+            System.out.println("\nThe team won!");
     }
 
 
@@ -27,18 +28,25 @@ public class Game {
     }
 
     private void displayDamageDealt(String heroName, double damage) {
-        System.out.printf("%s dealt %f damage to %s\n", heroName, damage, enemy.getName());
+        System.out.printf("%s dealt %.2f damage to %s\n", heroName, damage, enemy.getName());
     }
 
     private void displayRemainingHp() {
-        System.out.printf("Team's remaining HP: %f\n", team.getTeamHp());
-        System.out.printf("Enemy's remaining HP: %f\n", enemy.getHp());
+        System.out.println("Team's remaining HP: " + team.getTeamHp());
+        System.out.println("Enemy's remaining HP: " + enemy.getHp());
         System.out.println();
     }
 
     private void process() {
+        // display enemy current cd
+        System.out.println("Enemy's current CD: " + enemy.getCurrentCd());
+
         // get runeStone
         String[] runeStone = RuneStones.randomRuneStone();
+        // display chosen runStones
+        displayChosenRuneStone(runeStone);
+
+        System.out.println(); //nextLine
 
         double totalDamage = 0;
         // iterate each hero in team, to get damage
@@ -58,6 +66,10 @@ public class Game {
             displayDamageDealt(team.getHero(i).getName(), damage);
         }
 
+        // if no damage dealt
+        if (totalDamage == 0)
+            System.out.println("No hero attacked in this round");
+
         //
         enemy.getDamaged(totalDamage);
         if (enemy.getHp() <= 0)
@@ -65,8 +77,16 @@ public class Game {
 
         // villain dealt damage
         team.getDamaged(enemy.getAttack());
+        System.out.println(enemy.getName() + " dealt " + enemy.getAttack() + " damage to the team\n");
 
         //
         displayRemainingHp();
+    }
+
+    private void displayChosenRuneStone(String[] runStones) {
+        System.out.println("Runestones dissolved:"); // header
+        for (String s : runStones) {
+            System.out.println(" - " + s);
+        }
     }
 }

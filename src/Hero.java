@@ -8,7 +8,7 @@ public class Hero extends NPC {
         return "Name:" + name + '\n' +
                 "Element: " + element + '\n' +
                 "HP: " + hp + '\n' +
-                "Attack: " + attack + '\n' + '\n';
+                "Attack: " + attack + '\n';
     }
 
     // Return damage

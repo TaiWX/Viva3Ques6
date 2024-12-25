@@ -4,7 +4,7 @@ public class Villain extends NPC {
     int initialCd;
     int currentCd;
 
-    public Villain(String name, String element, double attack, double maxHp, double defense, int initialCd) {
+    public Villain(String name, String element, double maxHp, double attack, double defense, int initialCd) {
         super(name, element, maxHp, attack);
         this.maxHp = maxHp;
         this.defense = defense;

@@ -40,9 +40,10 @@ public class Team {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Team's HP: ").append(getTeamHp()).append("\n\n");
+        sb.append("Team's HP: ").append(getTeamHp()).append("\n");
 
         for (int i = 0; i < heroesList.length; i++) {
+            sb.append('\n');
             sb.append("Hero ").append(i + 1).append('\n');
             sb.append(deck[heroesList[i]].toString());
         }
@@ -72,7 +73,7 @@ public class Team {
         }
     }
 
-    public void getDamaged(double damage){
+    public void getDamaged(double damage) {
         teamHp -= damage;
         if (teamHp < 0)
             teamHp = 0;
