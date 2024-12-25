@@ -5,10 +5,10 @@ public class Hero extends NPC{
 
     @Override
     public String toString() {
-        return "Name:'" + name + '\n' +
-                "Element='" + element + '\n' +
+        return "Name:" + name + '\n' +
+                "Element: " + element + '\n' +
                 "HP: " + hp + '\n' +
-                "Attack=" + attack + '\n';
+                "Attack: " + attack + '\n' + '\n';
     }
 
     // Return damage
