@@ -10,6 +10,10 @@ public class Game {
         this.team = team;
         this.enemy = enemy;
 
+        // reset all hp
+        team.resetTeamHp();
+        enemy.resetHp();
+
         for (int i = 1; team.getTeamHp() > 0 && enemy.getHp() > 0; i++) {
             System.out.println("Round " + i);
             process();
@@ -76,8 +80,13 @@ public class Game {
             return;
 
         // villain dealt damage
-        team.getDamaged(enemy.getAttack());
-        System.out.println(enemy.getName() + " dealt " + enemy.getAttack() + " damage to the team\n");
+        if (enemy.getCurrentCd() == 1){
+            team.getDamaged(enemy.getAttack());
+            System.out.println(enemy.getName() + " dealt " + enemy.getAttack() + " damage to the team\n");
+
+            //reset cd
+            enemy.resetCd();
+        }
 
         //
         displayRemainingHp();
