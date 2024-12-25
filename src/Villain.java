@@ -13,10 +13,10 @@ public class Villain extends NPC{
     }
 
     // TODO
-    public double getDamaged(double damage){
+    public void getDamaged(double damage){
+        super.setHp(super.getHp() - damage);
         if (super.getHp()<0)
             super.setHp(0);
-        return 0;
     }
 
     public void resetHp(){
