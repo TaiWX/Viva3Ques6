@@ -62,6 +62,9 @@ public class Game {
         if (enemy.getHp() <= 0)
             return;
 
+        // villain dealt damage
+        team.getDamaged(enemy.getAttack());
+
         //
         displayRemainingHp();
     }

@@ -71,4 +71,10 @@ public class Team {
             deck[j] = temp;
         }
     }
+
+    public void getDamaged(double damage){
+        teamHp -= damage;
+        if (teamHp < 0)
+            teamHp = 0;
+    }
 }
