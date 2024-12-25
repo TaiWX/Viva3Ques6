@@ -86,6 +86,8 @@ public class Game {
 
             //reset cd
             enemy.resetCd();
+        } else{
+            enemy.decreaseCd();
         }
 
         //

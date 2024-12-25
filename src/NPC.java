@@ -1,4 +1,4 @@
-public abstract class NPC {
+public class NPC {
     String name;
     String element;
     double hp;
