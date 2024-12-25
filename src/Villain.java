@@ -78,4 +78,9 @@ public class Villain extends NPC{
     public void setCurrentCd(int currentCd) {
         this.currentCd = currentCd;
     }
+
+    // Return damage when cd == 1 && hp > 0
+    public double dealtDamage() {
+        return (currentCd == 1 && hp > 0) ? getAttack() : 0;
+    }
 }

@@ -13,7 +13,7 @@ public class Team {
     }
 
     // Reset the team hp
-    private void resetTeamHp(){
+    public void resetTeamHp(){
         teamHp = calculateTeamHp();
     }
 
@@ -41,5 +41,10 @@ public class Team {
 
     public double getTeamHp() {
         return teamHp;
+    }
+
+    // Return hero from deck
+    public Hero getHero(int index){
+        return deck[index];
     }
 }

@@ -11,9 +11,9 @@ public class Hero extends NPC{
                 "Attack=" + attack + '\n';
     }
 
-    // TODO
+    // Return damage
     public double calculateDamage(Villain enemy, int rsMultiplier){
-        return 0;
+        return getAttack() * RuneStones.getWeakness(getElement(), enemy.getElement()) * rsMultiplier - enemy.getDefense();
     }
 
 }
