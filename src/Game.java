@@ -33,6 +33,7 @@ public class Game {
     private void displayRemainingHp() {
         System.out.printf("Team's remaining HP: %f\n", team.getTeamHp());
         System.out.printf("Enemy's remaining HP: %f\n", enemy.getHp());
+        System.out.println();
     }
 
     private void process() {
