@@ -32,11 +32,11 @@ public class Game {
     }
 
     private void displayDamageDealt(String heroName, double damage) {
-        System.out.printf("%s dealt %.2f damage to %s\n", heroName, damage, enemy.getName());
+        System.out.println(heroName + " dealt " + damage +" damage to " + enemy.getName());
     }
 
     private void displayRemainingHp() {
-        System.out.println("Team's remaining HP: " + team.getTeamHp());
+        System.out.println("\nTeam's remaining HP: " + team.getTeamHp());
         System.out.println("Enemy's remaining HP: " + enemy.getHp());
         System.out.println();
     }
@@ -79,10 +79,10 @@ public class Game {
         if (enemy.getHp() <= 0)
             return;
 
-        // villain dealt damage
+        // villain dealt damage TODO
         if (enemy.getCurrentCd() == 1){
             team.getDamaged(enemy.getAttack());
-            System.out.println(enemy.getName() + " dealt " + enemy.getAttack() + " damage to the team\n");
+            System.out.println(enemy.getName() + " dealt " + enemy.getAttack() + " damage to the team");
 
             //reset cd
             enemy.resetCd();
